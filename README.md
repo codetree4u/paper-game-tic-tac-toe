@@ -28,7 +28,7 @@ The game design be divided into three main categories:
 
 We will handle this task by using a list of 9 items, since a tic-tac-toe board contains 9 squares.  
 Grids are identified by their position numbers.  As an example, position 8 refers to the bottom middle grid.  
-
+![illustrate grid](grid_01.png)
  
 
 ---
