@@ -1,7 +1,5 @@
 ## Project Introduction - tic-tac-toe game.
-This project is about making a class object-based game called tic-tac-toe.
-
-The purpose of this project is to create a simple game called rock paper scissors by creating objects. Be sure to revise your Python objects and classes before proceeding.
+In this project, we will make a class object-based game called tic-tac-toe.
 
 ---
 ## Game Description
