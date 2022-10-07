@@ -3,7 +3,7 @@ class Board:
         self.board = [' ', ' ', ' ', 
                       ' ', ' ', ' ', 
                       ' ', ' ', ' ']
- 
+
     def print_board(self):
         print('\n')
         print(' ' + self.board[0] + ' | ' + self.board[1] + ' | ' + self.board[2])
@@ -11,7 +11,20 @@ class Board:
         print(' ' + self.board[3] + ' | ' + self.board[4] + ' | ' + self.board[5])
         print('-----------')
         print(' ' + self.board[6] + ' | ' + self.board[7] + ' | ' + self.board[8])
- 
+
+    def update_board(self, position, type):
+
+         # if a player selects position n, n-1 index should be updated
+         # if the position is not already filled, update the board 
+         if self.board[position - 1]  == ' ':      
+             self.board[position - 1] = type
+             return True 
+
+         # if the position is already filled, ask user to select another position
+         else: 
+              print('Position already selected. Select another position.')
+              return False
+
 class Player:
     def __init__(self, type):
         self.type = type
@@ -23,19 +36,35 @@ class Player:
         else:
             name = input('Player selecting O, enter your name: ')
         return name
- 
+
 class Game:
     def __init__(self):
         self.board = Board()
- 
+
         self.player1 = Player('X')
         self.player2 = Player('O')
- 
+
         self.current_player = self.player1
- 
-    # this method will be later used to play the game
+
+    # updating the play method
     def play(self):
-         pass
- 
+
+        # using an infinite loop to run the game
+        # we will later add conditions to terminate the loop
+         while True:
+              message = f'{self.current_player.name}, enter the position (1 - 9): '
+              position = int(input(message))
+
+              # the update_board() method return True if
+              # the user selected position is not already filled
+              if self.board.update_board(position, self.current_player.type):
+                  self.board.print_board()
+                  
+                  # changing current player when board is updated 
+                  if self.current_player == self.player1:
+                      self.current_player = self.player2
+                  else:
+                       self.current_player = self.player1
+
 game = Game()
 game.play()
