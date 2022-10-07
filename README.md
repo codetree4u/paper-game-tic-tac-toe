@@ -24,12 +24,29 @@ The game design be divided into three main categories:
 2- Two Players  
 3- Win and Draw Logic  
 
+
 #### The tic-tac-toe Board
 
 We will handle this task by using a list of 9 items, since a tic-tac-toe board contains 9 squares.  
 Grids are identified by their position numbers.  As an example, position 8 refers to the bottom middle grid.  
 ![illustrate grid](grid_01.png)
  
+### Two Players
+
+Two players compete against one another in this game.  
+The game starts the competition by giving the X symbol to the first player and the O symbol to the second player.  
+
+
+### Win and Draw Logic
+
+We will check the position of symbols in a list for win/draw logic. 
+
+For example,  
+
+If position 4, 5, and 6 have the same X symbol, the first player wins.  
+If position 3, 5, and 7 have the same O symbol, the second player wins.  
+If position 2, 5, and 8 have the same X symbol, the first player wins as such, and so forth.  
+In the case of players not getting three of their symbols in a row, the game is a draw.  
 
 ---
 ## Usage
