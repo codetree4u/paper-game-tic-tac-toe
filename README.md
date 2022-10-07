@@ -16,6 +16,19 @@ Game rules are:
 ## Project Description
 Here's how our project works:
 
+### Project Design
+
+The game design be divided into three main categories:  
+
+1- The tic-tac-toe Board  
+2- Two Players  
+3- Win and Draw Logic  
+
+#### The tic-tac-toe Board
+
+We will handle this task by using a list of 9 items, since a tic-tac-toe board contains 9 squares.  
+Grids are identified by their position numbers.  As an example, position 8 refers to the bottom middle grid.  
+
  
 
 ---
