@@ -20,7 +20,7 @@ Here's how our project works:
 
 ---
 ## Usage
-To run this project code, choose an online IDE with Python 3 example to choose from are:
+If you would like to run this project code, you can use one of the following online IDEs with Python 3 support:  
 * [programiz](https://www.programiz.com/python-programming/online-compiler/)
 * https://pynative.com/
 
