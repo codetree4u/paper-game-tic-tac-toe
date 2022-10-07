@@ -1,4 +1,4 @@
-## Project Introduction - tic-tac-toe game.
+## Project Introduction - paper-game-tic-tac-toe.
 In this project, we will make a class object-based game called tic-tac-toe.
 
 ---
