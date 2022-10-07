@@ -1,5 +1,5 @@
 ## Project Introduction - paper-game-tic-tac-toe.
-In this project, we will make a class object-based game called tic-tac-toe.
+In this project, we will create the paper game tic-tac-toe using a class object-based approach.  
 
 ---
 ## Game Description
