@@ -14,16 +14,19 @@ class Board:
  
     def update_board(self, position, type):
  
-         # if a player selects position n, n-1 index should be updated
-         # if the position is not already filled, update the board 
-         if self.board[position - 1]  == ' ':      
-             self.board[position - 1] = type
-             return True 
+        try :
+            # if a player selects position n, n-1 index should be updated
+            # if the position is not already filled, update the board 
+            if self.board[position - 1]  == ' ':      
+                self.board[position - 1] = type
+                return True 
  
-         # if the position is already filled, ask user to select another position
-         else: 
-              print('Position already selected. Select another position.')
-              return False
+            # if the position is already filled, ask user to select another position
+            else: 
+                 print('Position already selected. Select another position.')
+                 return False
+        except:
+            print('Invalid position! Select another position.')
  
     # If three symbols appears in a row, returning True
     def check_winner(self, type):
@@ -71,33 +74,36 @@ class Game:
     # updating the play method
     def play(self):
  
-        # using an infinite loop to run the game
-        # we will later add conditions to terminate the loop
-         while True:
-              message = f'{self.current_player.name}, enter the position (1 - 9): '
-              position = int(input(message))
+        try:
+            # using an infinite loop to run the game
+            # we will later add conditions to terminate the loop
+             while True:
+                  message = f'{self.current_player.name}, enter the position (1 - 9): '
+                  position = int(input(message))
  
-              # the update_board() method return True if
-              # the user selected position is not already filled
-              if self.board.update_board(position, self.current_player.type):
-                  self.board.print_board()
+                  # the update_board() method return True if
+                  # the user selected position is not already filled
+                  if self.board.update_board(position, self.current_player.type):
+                      self.board.print_board()
                     
-                  # checking winner each time after updating the board 
-                  if self.board.check_winner(self.current_player.type):
-                      print(self.current_player.name, 'wins!')
-                      break
+                      # checking winner each time after updating the board 
+                      if self.board.check_winner(self.current_player.type):
+                          print(self.current_player.name, 'wins!')
+                          break
  
-                  # checking draw each time after updating the board
-                  elif self.board.check_draw():
-                      print('Game is a draw!')
-                      break               
+                      # checking draw each time after updating the board
+                      elif self.board.check_draw():
+                          print('Game is a draw!')
+                          break               
  
-                  # changing current player when board is updated 
-                  else:
-                      if self.current_player == self.player1:
-                          self.current_player = self.player2
+                      # changing current player when board is updated 
                       else:
-                          self.current_player = self.player1 
+                          if self.current_player == self.player1:
+                              self.current_player = self.player2
+                          else:
+                              self.current_player = self.player1 
+        except:
+                print('Invalid input! Enter a number between 1 and 9.') 
  
 game = Game()
 game.play()
