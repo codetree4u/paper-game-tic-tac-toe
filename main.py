@@ -39,7 +39,7 @@ class Board:
         else:
             return False
  
-    # If all fields are selected and there is no winner, it's draw
+    # If all fields are selected and there is no winner, it's a draw
     # Returning True if it's draw
     def check_draw(self):
         if ' ' not in self.board:
@@ -81,12 +81,23 @@ class Game:
               # the user selected position is not already filled
               if self.board.update_board(position, self.current_player.type):
                   self.board.print_board()
-                  
+                    
+                  # checking winner each time after updating the board 
+                  if self.board.check_winner(self.current_player.type):
+                      print(self.current_player.name, 'wins!')
+                      break
+ 
+                  # checking draw each time after updating the board
+                  elif self.board.check_draw():
+                      print('Game is a draw!')
+                      break               
+ 
                   # changing current player when board is updated 
-                  if self.current_player == self.player1:
-                      self.current_player = self.player2
                   else:
-                       self.current_player = self.player1
+                      if self.current_player == self.player1:
+                          self.current_player = self.player2
+                      else:
+                          self.current_player = self.player1 
  
 game = Game()
 game.play()
